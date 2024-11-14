@@ -1,0 +1,55 @@
+Step 1
+Request to become a member of the NOAA-CRIS organization by emailing rantwerpen@esri.com. Please include your name, organization, and GitHub account name.
+
+
+Step 2
+Click “Fork” at the top-right of the repository page to fork the CRIS repository and create your own copy in your GitHub account.
+
+
+Step 3
+Create a new branch of the forked repository using Git Bash.
+
+3a.
+Clone the forked repository to your local machine:
+git clone https://github.com/<your-account-name>/CRIS.git
+
+3b.
+Navigate to the cloned directory:
+cd CRIS
+
+3c.
+Create a new branch for your code nomination and switch to it:
+git checkout -b nominate-code
+
+
+Step 4
+Add your code to the “CRIS/code/user-created workflows” directory in your branch
+
+
+Step 5
+Commit changes with a descriptive message.
+git add .
+git commit -m “nominate new code: [brief description]”
+
+
+Step 6
+Push changes to GitHub.
+git push origin nominate-code
+
+
+Step 7
+Create a pull request.
+Navigate to the original NOAA-CRIS/CRIS repository on GitHub.
+Click on the “Pull Requests” tab and then click “New Pull Request”.
+Select your branch from the forked repository and compare it with the main branch of the NOAA-CRIS/CRIS repository.
+Provide a description of the change.
+Submit the pull request.
+
+
+Step 8
+An admin will review your pull request.
+
+
+Step 9
+If your pull request is accepted, the changes will be merged into the main branch of the NOAA-CRIS/CRIS repository.
+
