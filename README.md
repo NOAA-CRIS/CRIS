@@ -11,4 +11,4 @@ Please refer to the directory /CRIS/docs/workflows/ for a visual overview of not
 
 Several example workflows are included in /CRIS/code/example workflows/ to help you get on your way for more custom calculations.
 
-We encourage you to write and contribute your own notebooks. Please refer to /CRIS/docs/how to submit your code to the repository.txt for a step-by-step description.
+We encourage you to write and contribute your own notebooks. Please refer to /CRIS/docs/how to submit your code to the repository.txt for step-by-step instructions.
