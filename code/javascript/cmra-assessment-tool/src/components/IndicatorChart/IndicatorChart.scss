@@ -1,0 +1,6 @@
+.indicatorChart {
+    &-canvas {
+        height: calc(100% - 60px - 0.5em);
+        padding: 8px;
+    }
+}

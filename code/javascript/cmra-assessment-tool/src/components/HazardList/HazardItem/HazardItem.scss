@@ -1,0 +1,36 @@
+@import '../../../styles/mixin.scss';
+.hazardItem {
+    &-container {
+        width: 100%;
+        padding: 0 0.5em 0 1.5em;
+        border-top: 1px dashed var(--color-base-light);
+        border-left: 6px solid var(--color-base-lightest-2);
+        border-bottom: 1px solid var(--color-base-lightest-2);
+        border-right: 1px solid var(--color-base-light);
+        background: var(--color-base-lightest-2);
+        flex-wrap: nowrap;
+        &:last-of-type {
+            border-bottom: 1px dashed var(--color-base-light);
+        }
+        &.selected {
+            background: white;
+            border-top: 1px solid var(--color-base-light);
+            border-bottom: 1px solid var(--color-base-light);
+            border-left: 6px solid var(--color-primary);
+            border-right: 1px solid white;
+            & + .hazardItem-container {
+                border-top: 1px solid var(--color-base-lightest-2);
+            }
+        }
+        &:hover:not(.selected) {
+            background: var(--color-base-lightest-2);
+            border-bottom: 1px solid var(--color-base-lighter);
+        }
+        cursor: pointer;
+        transition: background 0.15s ease;
+    }
+
+    &-title {
+        font-weight: normal;
+    }
+}

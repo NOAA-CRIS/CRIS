@@ -1,0 +1,525 @@
+.app {
+    &--container {
+        height: calc(100vh - 4rem); // account for 2rem padding, top / bottom
+    }
+
+    &__alerts--container {
+        position: fixed;
+        inset-inline-start: 50%;
+        inset-block-start: 1rem;
+        z-index: 999;
+        translate: -50% 0;
+        z-index: 999;
+    }
+
+    &__alerts--item {
+        position: relative;
+        box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.15);
+        transition: translate 0.2s ease-out, display 0.1s ease-out;
+
+        translate: 0 0;
+
+        @starting-style {
+            translate: 0 1rem;
+        }
+    }
+
+    &__alerts--select-geotype {
+        margin-block-start: -8px;
+        border-left-color: var(--brand) !important;
+        box-shadow: none;
+        translate: none;
+
+        & .usa-alert__body {
+            padding-inline: 16px !important;
+            line-height: 1.3 !important;
+        }
+    }
+
+    &__alerts--item-close.usa-button {
+        position: absolute;
+        inset-inline-end: 0;
+        inset-block-start: 0;
+        height: 10px !important;
+        width: 10px !important;
+        border: none !important;
+        background: transparent !important;
+        cursor: pointer !important;
+
+        &:focus {
+            outline-offset: -2px !important;
+        }
+    }
+
+    &__alerts--item-close.usa-button svg {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        translate: -50% -50%;
+    }
+
+    .usa-alert__text:has(&__alerts--item-close) {
+        padding-inline-end: 1.5rem;
+    }
+}
+
+/* CSS Reset: @link https: //piccalil.li/blog/a-more-modern-css-reset/ */
+/* Font (Cabin): see index.html, googleapis.com  */
+
+/* #region trussworks overwrites */
+/* https: //github.com/trussworks/react-uswds  */
+*:focus {
+    outline-color: var(--brand) !important;
+    outline-width: 3px !important;
+    outline-offset: 1px !important;
+}
+.usa-button {
+    margin: 0 !important;
+    padding-block: 0 !important;
+    // height: calc(100% + 1px) !important;
+    color: var(--brand) !important;
+    background: #fff !important;
+    border: 1px solid var(--brand) !important;
+
+    &[disabled] {
+        opacity: 0.2 !important;
+    }
+
+    // @media (prefers-color-scheme: dark) {
+    //     background-color: transparent !important;
+    // }
+
+    &--unstyled {
+        background: transparent !important;
+        border: none !important;
+    }
+}
+
+.usa-button--unstyled {
+    background: transparent !important;
+    border: none !important;
+
+    color: var(--brand);
+    font-weight: 700 !important;
+    text-decoration-color: var(--brand);
+    text-decoration-thickness: 0.1ex !important;
+    text-underline-offset: 1ex;
+
+    // @media (prefers-color-scheme: dark) {
+    //     color: var(--foreground);
+    //     text-decoration-color: var(--foreground);
+    // }
+}
+
+.download-button .usa-button {
+    padding-inline: 0;
+}
+
+.usa-checkbox__input--tile + [class*='__label'] {
+    background: var(--background) !important;
+    color: var(--foreground) !important;
+    border-radius: 0 !important;
+    margin-block-start: 0 !important;
+}
+
+.usa-checkbox__input--tile + [class*='__label'] {
+    border: 0 !important;
+}
+
+.usa-checkbox__label:before {
+    border-radius: 0 !important;
+    box-shadow: 0 0 0 1px var(--brand) !important;
+}
+/* #endregion trussworks overwrites */
+
+/* #region esri overwrites */
+* {
+    --esri-view-outline-color: var(--brand) !important;
+}
+
+.esri-input[type='text'],
+.esri-input[type='password'],
+.esri-input[type='number'] {
+    height: auto !important;
+    color: var(--brand);
+    font-size: 1rem;
+
+    &::placeholder,
+    & * {
+        fill: var(--brand) !important;
+        stroke: var(--brand) !important;
+        color: var(--brand) !important;
+    }
+
+    &::placeholder {
+        opacity: 0.5;
+    }
+}
+
+.esri-legend__service {
+    h3.esri-widget__heading {
+        display: none;
+    }
+    .esri-legend__layer-body {
+        display: none;
+    }
+    .esri-legend__layer-caption {
+        font-weight: bold;
+    }
+    .esri-legend__service {
+        padding: unset;
+    }
+}
+
+.esri-expand__content-container,
+.esri-widget:not(:where(.esri-popup__main-container, .esri-attribution, .esri-feature)) {
+    border: 1px solid var(--brand) !important;
+}
+
+.esri-component,
+.esri-widget--panel,
+.esri-popup__main-container.esri-popup--shadow {
+    box-shadow: none !important;
+}
+
+body:not(:has(.mapControls--container--hide)) .esri-attribution {
+    width: calc(100% - var(--secondary-controls-width));
+    margin-inline-start: auto;
+}
+
+// esri home/zoom controls
+// move wheen panel opened/closed
+body:has(.mapControls--container--hide) .esri-ui-bottom-left {
+    inset-inline-start: calc(40px + 2rem);
+}
+body:not(:has(.mapControls--container--hide)) .esri-ui-bottom-left {
+    inset-inline-start: var(--secondary-controls-width);
+}
+// end esri home/zoom controls
+
+// esri left swipe expand control
+// move wheen panel opened/closed
+body:has(.mapControls--container--hide) .esri-ui-top-left {
+    inset-inline-start: calc(40px + 2rem);
+}
+body:not(:has(.mapControls--container--hide)) .esri-ui-top-left {
+    inset-inline-start: var(--secondary-controls-width);
+}
+// end esri left swipe expand control
+
+// esri swipe
+.esri-swipe__container:focus {
+    outline: 0 !important;
+}
+// end esri swipe
+
+// esri custom popup
+.esri-features__content-container:has(.esri-feature__content-node) {
+    padding-block-end: 1rem !important;
+}
+
+.esri-expand__popover-content:has(.popup-content) {
+    margin-block-start: -2px;
+}
+
+.esri-expand__content-container:has(.popup-content) {
+    padding: 12px 24px 12px 12px;
+}
+
+.esri-expand__content-container *,
+.esri-feature__content-node * {
+    color: var(--brand);
+}
+
+.esri-expand__content-container h1,
+.esri-feature__content-node h1 {
+    font-size: var(--h2) !important;
+    margin-block-end: 0 !important;
+}
+
+.esri-expand__content-container h2,
+.esri-feature__content-node h2 {
+    font-size: var(--h3) !important;
+    margin-block-start: 0.75rem !important;
+}
+
+.esri-expand__content-container h3,
+.esri-feature__content-node h3 {
+    font-size: var(--h4) !important;
+    opacity: 0.6;
+    margin-block-start: 0.25rem !important;
+    padding-block-end: 0.75rem !important;
+    border-block-end: 1px solid var(--brand);
+}
+
+.popup-content span,
+.popup-content p {
+    margin-block: 0.25rem;
+    display: block;
+
+    &:first-of-type {
+        margin-block-start: 0.75rem;
+    }
+}
+
+.popup-content p mark {
+    margin-block: 0.25rem;
+    display: inline-block;
+    background-color: var(--brand);
+    color: #fff;
+    padding: 0.25rem 0.4rem;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.esri-ui-bottom-right {
+    flex-direction: column-reverse;
+}
+.esri-ui-bottom-right .esri-component {
+    margin-block-start: 10px;
+    margin-inline-start: unset;
+}
+
+.esri-popup__main-container {
+    width: var(--popup-width) !important;
+}
+
+body:not(:has(.mapControls--container--hide)) .esri-popup__main-container {
+    inset-inline-start: var(--secondary-controls-width);
+}
+body:has(.mapControls--container--hide) .esri-popup__main-container {
+    inset-inline-start: calc(40px + 2rem);
+}
+// end esri custom popup
+
+/* #endregion esri overwrites */
+
+.usa-alert__text a {
+    text-decoration: underline;
+    text-underline-offset: 0.5ex;
+    text-decoration-thickness: 0.1ex;
+}
+
+button {
+    cursor: pointer;
+    color: var(--brand);
+    border-radius: 0 !important;
+    min-height: 40px;
+    transition: opacity 0.2s ease-out !important;
+
+    // @media (prefers-color-scheme: dark) {
+    //     color: var(--foreground);
+    // }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Box sizing / font rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Public Sans', sans-serif !important;
+}
+
+::selection {
+    background-color: #ecf3ec !important;
+    color: var(--blue-900);
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+// html {
+//     color: var(--grey-900);
+//     background-color: var(--grey-50);
+
+//     @media (prefers-color-scheme: dark) {
+//         color: var(--grey-50);
+//         background-color: var(--grey-900);
+//     }
+// }
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    margin: 0;
+
+    --foreground: #004d7a;
+    --background: #f6f6f6;
+    color: var(--foreground) !important;
+    background-color: (var(--background)) !important;
+
+    // @media (prefers-color-scheme: dark) {
+    //     --foreground: #f6f6f6;
+    //     --background: #191919;
+    //     color: var(--foreground) !important;
+    //     background-color: (var(--background)) !important;
+    // }
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+body {
+    padding: 2rem;
+    font-size: var(--step-0);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: var(--h1) !important; // trussworks overrides if not important
+    max-width: 20ch;
+    font-weight: 700 !important;
+}
+
+h2 {
+    font-size: var(--h2) !important; // trussworks overrides if not important
+    max-width: 28ch;
+    font-weight: 700 !important;
+}
+
+h3 {
+    font-size: var(--h3) !important; // trussworks overrides if not important
+    max-width: 28ch;
+    font-weight: 700 !important;
+}
+
+a {
+    color: var(--brand);
+    text-decoration-color: var(--brand);
+    text-decoration-thickness: 0.1ex;
+    text-underline-offset: 1ex;
+
+    // @media (prefers-color-scheme: dark) {
+    //     color: var(--foreground);
+    //     text-decoration-color: var(--foreground);
+    // }
+
+    &:focus {
+        text-decoration-style: wavy;
+        text-underline-offset: 1em;
+    }
+}
+
+.app--container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: calc(100vh - 4rem);
+
+    & header {
+        flex-shrink: 1;
+    }
+
+    & main {
+        flex-shrink: 0;
+        height: calc(100% - 4rem);
+        /* acct for 10px of border-bottom */
+        position: relative;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        padding-block-start: 4rem;
+    }
+}

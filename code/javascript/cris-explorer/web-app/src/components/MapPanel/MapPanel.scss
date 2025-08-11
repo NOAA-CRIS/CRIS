@@ -1,0 +1,66 @@
+.mapPanel {
+    &--container {
+        position: relative;
+        display: grid;
+        grid-template-columns: var(--secondary-controls-width) 1fr;
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+    }
+    &--container:has(.mapControls--container--hide)::after {
+        content: '';
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        background: var(--background);
+        border-inline-end: 1px solid var(--brand);
+        box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.025);
+        height: calc(100% - 16px);
+        z-index: 1;
+        width: calc(40px + 2rem);
+    }
+    &--container-toggle-btn {
+        position: absolute;
+        height: 40px !important;
+        max-width: 40px;
+        aspect-ratio: 1;
+        padding: 0 !important;
+        inset-inline-start: calc(var(--secondary-controls-width) - 2rem - 40px);
+        inset-block-start: calc(1rem - 1px);
+        background-color: #fff !important;
+        z-index: 10;
+        transition: translate 0.1s ease-out;
+
+        & svg {
+            margin-block-start: 2px;
+        }
+    }
+    &--container-toggle-btn:has(~ .mapControls--container--hide) {
+        translate: calc(((var(--secondary-controls-width)) * -1) + 1rem - 1px) 0;
+        inset-inline-start: var(--secondary-controls-width);
+    }
+    &--container-toggle-view {
+        display: none !important;
+        position: absolute;
+        height: 40px !important;
+        max-width: 40px;
+        aspect-ratio: 1;
+        padding: 0 !important;
+        translate: calc(((var(--secondary-controls-width)) * -1) + 1rem - 1px) 0;
+        inset-inline-start: var(--secondary-controls-width);
+        inset-block-start: calc(1rem - 1px + (40px + 1rem));
+        background-color: #fff !important;
+        z-index: 10;
+    }
+    &--container-toggle-view:has(+ .mapControls--container--hide) {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mapPanel {
+        &--container {
+            height: calc(100% - 48px);
+        }
+    }
+}

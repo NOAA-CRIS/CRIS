@@ -1,0 +1,125 @@
+{
+    "auth": {
+        "appItemId": "251291b73c9f467cb801e89acbe564ff",
+        "clientId": "TO9usVxgjJYQvyt5",
+        "portalUrl": "https://nationalclimate.maps.arcgis.com",
+        "params": {
+            "popup": false,
+            "canHandleCrossOrgSignIn": true
+        }
+    },
+    "links": {
+        "help": "https://cris.climate.gov/pages/explorer",
+        "hub": "https://cris.climate.gov/",
+        "data": "https://cris.climate.gov/pages/cris-data"
+    },
+    "webmap": "abb3fbe5d54540118e4835e5f93bef35",
+    "services": {
+        "county": {
+            "FUTURE": {
+                "title": "Modeled Projections (Decadal) by County",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_County/FeatureServer/5"
+            },
+            "PAST_MODELED": {
+                "title": "Modeled History (Decadal) by County",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_County/FeatureServer/4"
+            },
+            "PAST_OBSERVED": {
+                "title": "Observed Climatology (Decadal) by County",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_County/FeatureServer/3"
+            }
+        },
+        "huc": {
+            "FUTURE": {
+                "title": "Modeled Projections (Decadal) by HUC 8",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_HUC_8_Watershed_Boundary/FeatureServer/5"
+            },
+            "PAST_MODELED": {
+                "title": "Modeled History (Decadal) by HUC 8",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_HUC_8_Watershed_Boundary/FeatureServer/4"
+            },
+            "PAST_OBSERVED": {
+                "title": "Observed Climatology (Decadal) by HUC 8",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_HUC_8_Watershed_Boundary/FeatureServer/3"
+            }
+        },
+        "tribal": {
+            "FUTURE": {
+                "title": "Modeled Projections (Decadal) by Tribal Area",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_Tribal_Area/FeatureServer/5"
+            },
+            "PAST_MODELED": {
+                "title": "Modeled History (Decadal) by Tribal Area",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_Tribal_Area/FeatureServer/4"
+            },
+            "PAST_OBSERVED": {
+                "title": "Observed Climatology (Decadal) by Tribal Area",
+                "url": "https://services3.arcgis.com/0Fs3HcaFfvzXvm7w/arcgis/rest/services/CRIS_Zonal_Statistics_by_Tribal_Area/FeatureServer/3"
+            }
+        }
+    },
+    "fieldNames": {
+        "geoId": "GEOID",
+        "decade": "DECADE",
+        "year": "YEAR",
+        "model": "MODEL",
+        "modelSet": "MODEL_SET",
+        "name": "NAME"
+    },
+    "crisExplorerDatasetItemId": "bfc4715fda8448ac8eeab53bfb35e817",
+    "decades": {
+        "FUTURE": {
+            "min": 2010,
+            "max": 2100
+        },
+        "PAST_MODELED": {
+            "min": 1950,
+            "max": 2000
+        },
+        "PAST_OBSERVED": {
+            "min": 1950,
+            "max": 2020
+        }
+    },
+    "models": {
+        "LOCA2": [
+            "ACCESS-CM2",
+            "ACCESS-ESM1-5",
+            "BCC-CSM2-MR",
+            "CanESM5",
+            "EC-Earth3",
+            "Ensemble",
+            "FGOALS-g3",
+            "GFDL-ESM4",
+            "INM-CM4-8",
+            "INM-CM5-0",
+            "IPSL-CM6A-LR",
+            "MIROC6",
+            "MPI-ESM1-2-HR",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NorESM2-LM",
+            "NorESM2-MM"
+        ],
+        "LOCA2-STAR": ["Ensemble"],
+        "STAR": [
+            "ACCESS-CM2",
+            "ACCESS-ESM1-5",
+            "BCC-CSM2-MR",
+            "CanESM5",
+            "EC-Earth3",
+            "Ensemble",
+            "FGOALS-g3",
+            "GFDL-ESM4",
+            "INM-CM4-8",
+            "INM-CM5-0",
+            "IPSL-CM6A-LR",
+            "MIROC6",
+            "MPI-ESM1-2-HR",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NorESM2-LM",
+            "NorESM2-MM"
+        ]
+    }
+}

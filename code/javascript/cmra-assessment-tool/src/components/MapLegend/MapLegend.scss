@@ -1,0 +1,55 @@
+.mapLegend {
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        position: absolute;
+        z-index: 1;
+        bottom: 30px;
+        right: 6em;
+        background: rgba(255, 255, 255, 0.75);
+        padding: 5px 10px;
+        height: auto;
+    }
+
+    &-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 36px;
+    }
+    &-header {
+        margin-right: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    &-prompt {
+        line-height: 28px;
+        height: 28px;
+    }
+    &-colors-container {
+        display: flex;
+        padding-left: 5px;
+        padding-right: 15px;
+        &:last-of-type {
+            padding-right: 0px;
+        }
+    }
+    &-color-item {
+        width: 25px;
+        height: 25px;
+        margin: 2px;
+        border: 1px solid var(--color-base-ink);
+    }
+    &-tribal-area {
+        width: 25px;
+        height: 25px;
+        margin: 2px;
+        border: 1px solid var(--color-base-ink);
+        background-color: #d6d2c9;
+    }
+}

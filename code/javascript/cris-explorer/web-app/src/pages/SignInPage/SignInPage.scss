@@ -1,0 +1,29 @@
+.signin {
+    &-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    &-login-container {
+        margin: auto;
+        width: 350px;
+    }
+    &-login-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem 0.5rem;
+        background: #f6f6f6;
+        border: 0.5rem solid #fff;
+    }
+    &-logo {
+        width: 177px;
+    }
+    &-button {
+        margin-inline-block: 1rem;
+    }
+}

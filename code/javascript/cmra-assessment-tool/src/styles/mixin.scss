@@ -1,0 +1,24 @@
+@mixin title-font-family {
+    font-family: 'Public Sans', Helvetica, Arial, sans-serif;
+}
+
+@mixin body-font-family {
+    font-family: 'Source Sans Pro Web', Helvetica, Arial, sans-serif;
+}
+
+@mixin btn-color-and-background($color, $background) {
+    color: $color;
+    background: $background;
+}
+
+@mixin transition($duration: .3s) {
+    transition: $duration;
+}
+
+@mixin colorizeIndicator($value) {
+    @for $i from $value + 1 through 5 {
+        path:nth-of-type(#{$i}) {
+            fill: var(--color-base-lighter);
+        }
+    }
+}

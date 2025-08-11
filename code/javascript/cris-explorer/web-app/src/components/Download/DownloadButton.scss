@@ -1,0 +1,42 @@
+.download-button {
+    // color: var(--brand);
+
+    button {
+        background-color: #fff !important;
+        position: absolute;
+        inset-block-start: calc(1rem - 1px);
+        inset-inline-end: calc(1rem - 1px);
+        z-index: 1 !important;
+        width: auto;
+        height: 40px !important;
+        aspect-ratio: 1;
+    }
+
+    button svg {
+        inset-block-start: 2px;
+    }
+
+    &__field {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .download-button {
+        &__field {
+            width: 100%;
+        }
+
+        button {
+            inset-block-start: calc((1rem - 1px) + 48px);
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .download-button {
+        label {
+            margin-block-start: 0;
+        }
+    }
+}

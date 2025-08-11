@@ -1,0 +1,72 @@
+{
+    "chartId": "cris-chart",
+    "chartTypes": {
+        "BAR": "BAR",
+        "LINE": "LINE",
+        "MIN_MAX": "MIN_MAX"
+    },
+    "series": [
+        {
+            "id": "PAST_OBSERVED_LIVNEH",
+            "chartType": "LINE",
+            "decadeType": "PAST_OBSERVED",
+            "grid": "LIVNEH",
+            "colors": ["#2b2d42", "#2b2d42"],
+            "names": ["PAST_OBSERVED_LIVNEH mean"],
+            "visible": false
+        },
+        {
+            "id": "PAST_OBSERVED_NCLIMGRID",
+            "chartType": "LINE",
+            "decadeType": "PAST_OBSERVED",
+            "grid": "NCLIMGRID",
+            "colors": ["#9381ff", "#9381ff"],
+            "names": ["PAST_OBSERVED_NCLIMGRID mean"],
+            "visible": false
+        },
+        {
+            "id": "PAST_MODELED",
+            "chartType": "MIN_MAX",
+            "decadeType": "PAST_MODELED",
+            "colors": ["#808080", "#A9A9A9"],
+            "names": ["PAST_MODELED min", "PAST_MODELED max", "PAST_MODELED mean"],
+            "visible": true
+        },
+        {
+            "id": "SSP245",
+            "chartType": "MIN_MAX",
+            "decadeType": "FUTURE",
+            "ssp": "SSP245",
+            "colors": ["#006D2C", "#A1D99B"],
+            "names": ["SSP245 min", "SSP245 max", "SSP245 mean"],
+            "visible": true
+        },
+        {
+            "id": "SSP370",
+            "chartType": "MIN_MAX",
+            "decadeType": "FUTURE",
+            "ssp": "SSP370",
+            "colors": ["#2171B5", "#6BAED6"],
+            "names": ["SSP370 min", "SSP370 max", "SSP370 mean"],
+            "visible": false
+        },
+        {
+            "id": "SSP585",
+            "chartType": "MIN_MAX",
+            "decadeType": "FUTURE",
+            "ssp": "SSP585",
+            "colors": ["#C51B8A", "#FA9FB5"],
+            "names": ["SSP585 min", "SSP585 max", "SSP585 mean"],
+            "visible": false
+        }
+    ],
+    "tooltipLabel": {
+        "backgroundColor": "#ccc",
+        "borderColor": "#aaa",
+        "borderWidth": 1,
+        "shadowBlur": 0,
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "color": "#000000"
+    }
+}

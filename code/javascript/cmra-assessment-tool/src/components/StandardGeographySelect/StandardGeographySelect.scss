@@ -1,0 +1,46 @@
+.standardGeographySelect {
+    &-container {
+        margin-top: 10px;
+        display: flex;
+        background: rgba(255, 255, 255, 0.75);
+        height: 46px;
+        align-items: center;
+        width: var(--search-container-width);
+    }
+    &-info-container {
+        display: flex;
+        align-items: center;
+        width: 170px;
+        padding: 0px 10px;
+        .usa-icon {
+            margin-right: 5px;
+        }
+    }
+    &-button-group {
+        .usa-button {
+            background: var(--color-accent-cool-lighter);
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary-darker);
+            box-shadow: none;
+            font-weight: normal;
+            font-size: 0.93rem;
+            padding: 0.25rem 1.25rem;
+            width: auto !important;
+            height: 36px;
+            margin-right: 0 !important;
+            line-height: calc(36px - 3em);
+            &:before {
+                border: none !important;
+            }
+            &--outline {
+                background: var(--color-base-lightest);
+                border: 1px solid var(--color-base);
+                color: var(--color-base-darkr);
+            }
+            &-group__item {
+                margin: 0;
+                white-space: nowrap;
+            }
+        }
+    }
+}
